@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "cube";
+  src: url("../fonts/cube.ttf");
+}
+@font-face {
+  font-family: "Akira Expanded Demo";
+  src: url("../fonts/Akira Expanded Demo.otf");
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #152D35;
+}
+
+p {
+  color: white;
+  font-size: 1rem;
+  font-family: Arial;
+}
+
+h2 {
+  color: #FFB344;
+  font-size: 1rem;
+  font-family: "Akira Expanded Demo";
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+svg.intro {
+  max-width: 800px;
+}
+svg.intro .text {
+  display: none;
+}
+svg.intro.go .text {
+  font-family: "cube";
+  font-size: 0.5em;
+  display: block;
+}
+svg.intro.go .text-stroke {
+  fill: none;
+  stroke: #FFB344;
+  stroke-width: 6px;
+  stroke-dashoffset: -900;
+  stroke-dasharray: 900;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  animation: dash 5s ease-in-out forwards;
+}
+svg.intro.go .text-stroke:nth-child(2) {
+  animation-delay: 0.3s;
+}
+svg.intro.go .text-stroke:nth-child(3) {
+  animation-delay: 0.9s;
+}
+svg.intro.go .text-stroke-2 {
+  stroke: #FFB344;
+  animation-delay: 1.2s;
+}
+svg.intro.go .text-stroke:nth-child(5) {
+  animation-delay: 1.5s;
+}
+svg.intro.go .text-stroke:nth-child(6) {
+  animation-delay: 1.8s;
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+#position-font-smaller {
+  font-size: 0.35rem;
+  font-family: "Akira Expanded Demo";
+}
+
+.globe-gif {
+  pointer-events: none;
+  width: 40%;
+}
+
+.bio-blueprint-background {
+  position: absolute;
+  width: 43%;
+  max-width: 600px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.project-blueprint-background {
+  margin-left: 2em;
+  margin-right: 2em;
+  position: absolute;
+  top: 0;
+}
+
+.blueprint-background-img {
+  width: 100%;
+  filter: invert(100%);
+}
+
+.dashed-border {
+  border: dashed white;
+  border-width: 2px;
+  background-color: #152D35;
+  z-index: 1;
+}
+
+.bio {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50vh;
+  position: relative;
+}
+.bio .bio-container {
+  width: 43%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+.bio .bio-container p {
+  width: 93%;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
+  flex-wrap: wrap;
+}
+.projects .projects-container {
+  position: relative;
+}
+.projects .projects-project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 2em;
+  margin-right: 2em;
+  min-width: 100px;
+  max-width: 220px;
+  transition: border 0.5s;
+}
+.projects .projects-project h2 {
+  text-align: center;
+}
+.projects .projects-project p {
+  width: 93%;
+}
+.projects .projects-project img {
+  width: 150%;
+}
+.projects .projects-project:hover {
+  cursor: pointer;
+  border: dashed white 6px;
+}
+
+/*# sourceMappingURL=style.css.map */

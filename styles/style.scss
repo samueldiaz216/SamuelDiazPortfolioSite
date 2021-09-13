@@ -1,0 +1,212 @@
+$header-name-font:'cube';
+$heading-font:'Akira Expanded Demo';
+$text-font:Arial;
+
+
+$background-color:#152D35;
+$primary-color:#FFB344;
+$secondary-color:white;
+
+$heading-font-size:.35rem;
+$text-font-size:1rem;
+
+
+
+@font-face{
+    font-family: "cube";
+    src: url("../fonts/cube.ttf");
+
+}
+
+@font-face{
+    font-family: "Akira Expanded Demo";
+    src: url("../fonts/Akira Expanded Demo.otf");
+
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $background-color;
+
+    
+  }
+
+  p{
+    color: $secondary-color;
+    font-size: $text-font-size;
+    font-family: $text-font;
+  }
+
+  h2{
+    color: $primary-color;
+    font-size: 1rem;
+    font-family: $heading-font;
+  }
+
+  header{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+      
+  }
+  
+  svg.intro {
+    max-width: 800px;
+    
+    
+
+    .text { 
+      display: none;
+    }
+    &.go {
+      .text {
+        font-family: $header-name-font;
+        font-size: .5em;
+        display: block;
+      }
+      .text-stroke {
+        fill: none;
+        stroke: $primary-color;
+        stroke-width: 6px;
+        stroke-dashoffset: -900;
+        stroke-dasharray: 900;
+        stroke-linecap: butt;
+        stroke-linejoin: round;
+        animation: dash 5s ease-in-out forwards;
+      }
+      .text-stroke:nth-child(2) {
+        animation-delay: .3s;
+      }
+      .text-stroke:nth-child(3) {
+        animation-delay: .9s;
+      }
+      .text-stroke-2 {
+        stroke: $primary-color;
+        animation-delay: 1.2s;
+      }
+      .text-stroke:nth-child(5) {
+        animation-delay: 1.5s;
+      }
+      .text-stroke:nth-child(6) {
+        animation-delay: 1.8s;
+      }
+    }
+  }
+  
+  @keyframes dash {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  
+  #position-font-smaller{
+    font-size:$heading-font-size;
+    font-family: 'Akira Expanded Demo';
+    
+    
+  }
+
+  .globe-gif{
+    pointer-events: none;
+    width:40%;
+  }
+
+  .bio-blueprint-background{
+    position: absolute;
+    width:43%;
+    max-width: 600px; 
+    overflow: hidden;
+    height: 100%;
+    
+  }
+
+  .project-blueprint-background{
+    
+    margin-left:2em;
+    margin-right:2em;
+    position: absolute;
+    top:0;
+    
+    
+  }
+
+  .blueprint-background-img{
+    width:100%;
+    filter: invert(100%);
+    
+  }
+
+  .dashed-border{
+    border:dashed $secondary-color;
+    border-width: 2px;
+    background-color: $background-color;
+    z-index: 1;
+  }
+
+  .bio{
+    // overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom:50vh;
+    position: relative;
+    #{&}-container{
+      width:43%;
+      max-width: 600px; 
+      display: flex;
+      justify-content: center;
+
+      p{
+        width:93%;
+      }
+    }
+  }
+
+  .projects{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    flex-wrap: wrap;
+    
+    #{&}-container{
+      position: relative;
+      
+    }
+
+    #{&}-project{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-left:2em;
+      margin-right:2em;
+      min-width:100px;
+      max-width: 220px;
+      transition:border .5s;
+
+      h2{
+        text-align: center;
+      }
+      p{
+        width:93%;
+      }
+      
+      img{
+        width:150%;
+      }
+
+      &:hover{
+        cursor: pointer;
+        border:dashed white 6px;
+      }
+
+      
+
+      
+    }
+  }
