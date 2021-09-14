@@ -23,9 +23,42 @@ $(function() {
 
   })
 
-  gsap.to(".projects-project",{
+  gsap.to(".wbm",{
     scrollTrigger:{
-      trigger:".projects-project",
+      trigger:".wbm",
+      start:"top center"
+    },
+    x:-20,
+    y:20,
+    duration:2
+
+  })
+
+  gsap.to(".oticon",{
+    scrollTrigger:{
+      trigger:".wbm",
+      start:"top center"
+    },
+    x:-20,
+    y:20,
+    duration:2
+
+  })
+
+  gsap.to(".ghost",{
+    scrollTrigger:{
+      trigger:".ghost",
+      start:"top center"
+    },
+    x:-20,
+    y:20,
+    duration:2
+
+  })
+
+  gsap.to(".portfolio",{
+    scrollTrigger:{
+      trigger:".portfolio",
       start:"top center"
     },
     x:-20,

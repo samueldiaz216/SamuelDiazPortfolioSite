@@ -33,6 +33,7 @@ header {
 
 svg.intro {
   max-width: 800px;
+  width: 1000px;
 }
 svg.intro .text {
   display: none;
@@ -129,11 +130,18 @@ svg.intro.go .text-stroke:nth-child(6) {
 
 .projects {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 3em;
   padding-left: 2em;
   padding-right: 2em;
-  flex-wrap: wrap;
+}
+@media screen and (min-width: 1200px) {
+  .projects {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .projects .projects-container {
   position: relative;
@@ -146,18 +154,29 @@ svg.intro.go .text-stroke:nth-child(6) {
   justify-content: space-evenly;
   margin-left: 2em;
   margin-right: 2em;
+  margin-bottom: 8em;
   min-width: 100px;
-  max-width: 220px;
+  max-width: 600px;
   transition: border 0.5s;
+  padding-top: 1em;
+}
+@media screen and (min-width: 1200px) {
+  .projects .projects-project {
+    max-width: 300px;
+    height: 500px;
+  }
 }
 .projects .projects-project h2 {
   text-align: center;
+  font-size: 1.3em;
+  width: 93%;
 }
 .projects .projects-project p {
   width: 93%;
 }
 .projects .projects-project img {
   width: 150%;
+  max-width: 600px;
 }
 .projects .projects-project:hover {
   cursor: pointer;
