@@ -12,6 +12,11 @@ body {
   background-color: #152D35;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 p {
   color: white;
   font-size: 1rem;
@@ -24,11 +29,27 @@ h2 {
   font-family: "Akira Expanded Demo";
 }
 
+.arrow-container {
+  top: 45vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow-container span {
+  transform: rotate(90deg);
+  color: white;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+
 header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 
 svg.intro {
@@ -82,7 +103,6 @@ svg.intro.go .text-stroke:nth-child(6) {
 
 .globe-gif {
   pointer-events: none;
-  width: 40%;
 }
 
 .bio-blueprint-background {
@@ -115,8 +135,8 @@ svg.intro.go .text-stroke:nth-child(6) {
 .bio {
   display: flex;
   justify-content: center;
-  margin-bottom: 50vh;
   position: relative;
+  margin-bottom: 1em;
 }
 .bio .bio-container {
   width: 43%;
@@ -126,6 +146,25 @@ svg.intro.go .text-stroke:nth-child(6) {
 }
 .bio .bio-container p {
   width: 93%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bio-arrow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.bio-arrow-container span {
+  transform: rotate(90deg);
+  color: white;
+  font-size: 2.5rem;
+  opacity: 0;
 }
 
 .projects {
@@ -162,7 +201,7 @@ svg.intro.go .text-stroke:nth-child(6) {
 }
 @media screen and (min-width: 1200px) {
   .projects .projects-project {
-    max-width: 300px;
+    max-width: 400px;
     height: 500px;
   }
 }
