@@ -54,6 +54,7 @@ body {
   
   svg.intro {
     max-width: 800px;
+    width:1000px;
     
     
 
@@ -166,11 +167,18 @@ body {
 
   .projects{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 3em;
     padding-left: 2em;
     padding-right: 2em;
-    flex-wrap: wrap;
+
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    
     
     #{&}-container{
       position: relative;
@@ -185,12 +193,22 @@ body {
       justify-content: space-evenly;
       margin-left:2em;
       margin-right:2em;
+      margin-bottom:8em;
       min-width:100px;
-      max-width: 220px;
+      max-width:600px;
       transition:border .5s;
+      padding-top:1em;
+
+      @media screen and (min-width: 1200px) {
+        max-width:300px;
+        height:500px;
+      }
 
       h2{
         text-align: center;
+        font-size: 1.3em;
+        width:93%;
+        
       }
       p{
         width:93%;
@@ -198,6 +216,7 @@ body {
       
       img{
         width:150%;
+        max-width: 600px;
       }
 
       &:hover{
