@@ -114,49 +114,105 @@ setTimeout(function () {
   });
 }, 4500); //second arrow animation
 
-gsap.to(".bio-dash1", {
+gsap.to(".bio-top-dash1", {
   scrollTrigger: {
-    trigger: ".bio-dash1",
+    trigger: ".bio-top-dash1",
     start: "top center"
   },
   opacity: 1,
   duration: 1
 });
-gsap.to(".bio-dash2", {
+gsap.to(".bio-top-dash2", {
   scrollTrigger: {
-    trigger: ".bio-dash2",
+    trigger: ".bio-top-dash2",
     start: "top center"
   },
   opacity: 1,
   duration: 1
 });
-gsap.to(".bio-dash3", {
+gsap.to(".bio-top-dash3", {
   scrollTrigger: {
-    trigger: ".bio-dash3",
+    trigger: ".bio-top-dash3",
     start: "top center"
   },
   opacity: 1,
   duration: 1
 });
-gsap.to(".bio-dash4", {
+gsap.to(".bio-top-dash4", {
   scrollTrigger: {
-    trigger: ".bio-dash4",
+    trigger: ".bio-top-dash4",
     start: "top center"
   },
   opacity: 1,
   duration: 1
 });
-gsap.to(".bio-dash5", {
+gsap.to(".bio-top-dash5", {
   scrollTrigger: {
-    trigger: ".bio-dash5",
+    trigger: ".bio-top-dash5",
     start: "top center"
   },
   opacity: 1,
   duration: 1
 });
-gsap.to(".bio-arrow", {
+gsap.to(".bio-top-arrow", {
   scrollTrigger: {
-    trigger: ".bio-arrow",
+    trigger: ".bio-top-arrow",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-mid-dash", {
+  scrollTrigger: {
+    trigger: ".bio-mid-dash",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-dash1", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-dash1",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-dash2", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-dash2",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-dash3", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-dash3",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-dash4", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-dash4",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-dash5", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-dash5",
+    start: "top center"
+  },
+  opacity: 1,
+  duration: 1
+});
+gsap.to(".bio-bottom-arrow", {
+  scrollTrigger: {
+    trigger: ".bio-bottom-arrow",
     start: "top center"
   },
   opacity: 1,

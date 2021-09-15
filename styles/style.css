@@ -154,13 +154,61 @@ svg.intro.go .text-stroke:nth-child(6) {
   flex-direction: column;
 }
 
-.bio-arrow-container {
+.bio-arrows {
+  display: flex;
+  flex-direction: column;
+}
+.bio-arrows .bio-arrows-top {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.bio-arrow-container span {
+@media screen and (min-width: 1200px) {
+  .bio-arrows .bio-arrows-top .bio-top-arrow {
+    display: none;
+  }
+}
+.bio-arrows .bio-arrows-top span {
+  transform: rotate(90deg);
+  color: white;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+.bio-arrows .bio-arrows-mid {
+  display: none;
+  width: 70vw;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1200px) {
+  .bio-arrows .bio-arrows-mid {
+    display: flex;
+  }
+}
+.bio-arrows .bio-arrows-mid span {
+  color: white;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+.bio-arrows .slight-move-right {
+  position: relative;
+  left: 0.55em;
+}
+.bio-arrows .bio-arrows-bottom {
+  display: none;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1200px) {
+  .bio-arrows .bio-arrows-bottom {
+    display: flex;
+  }
+}
+.bio-arrows .bio-arrows-bottom .bio-arrows-bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bio-arrows .bio-arrows-bottom .bio-arrows-bottom-container span {
   transform: rotate(90deg);
   color: white;
   font-size: 2.5rem;
