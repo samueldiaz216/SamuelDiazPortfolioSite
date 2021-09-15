@@ -1,6 +1,6 @@
 $header-name-font:'cube';
 $heading-font:'Akira Expanded Demo';
-$text-font:Arial;
+$text-font:'Gravitica Mono Light Demo';
 
 
 $background-color:#152D35;
@@ -24,6 +24,15 @@ $text-font-size:1rem;
 
 }
 
+@font-face{
+  font-family: "Gravitica Mono Light Demo";
+  src: url("../fonts/Gravitica Mono Light Demo.otf");
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -36,6 +45,19 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
+  ul{
+    list-style-type: none;
+  }
+
+  // nav{
+  //   ul{
+  //     display:flex;
+  //     li{
+  //       font-family: $text-font;
+  //     }
+  //   }
+  // }
 
   p{
     color: $secondary-color;
@@ -269,6 +291,10 @@ body {
     
 
     
+  }
+
+  .arial-utility{
+    font-family: Arial, Helvetica, sans-serif;
   }
 
 
