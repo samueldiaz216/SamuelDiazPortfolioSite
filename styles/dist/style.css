@@ -18,6 +18,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #152D35;
+  overflow-x: hidden;
 }
 
 a, a:hover, a:focus, a:active {
@@ -25,8 +26,129 @@ a, a:hover, a:focus, a:active {
   color: inherit;
 }
 
-ul {
-  list-style-type: none;
+nav {
+  padding: 0 1.5em 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+nav .nav-list {
+  position: relative;
+}
+nav .nav-list ul {
+  display: flex;
+}
+@media screen and (max-width: 600px) {
+  nav .nav-list ul {
+    padding-top: 2em;
+    position: absolute;
+    border-radius: 20px;
+    right: 32px;
+    top: 43px;
+    display: flex;
+    flex-direction: column;
+    height: 56vh;
+    width: 150px;
+    background-color: #5672fc;
+    z-index: 10;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: all 0.3s ease-in;
+  }
+}
+nav .nav-list ul .nav-item {
+  margin-bottom: 2.5em;
+  position: relative;
+  font-family: "Gravitica Mono Light Demo";
+  font-size: 1.2em;
+}
+@media screen and (min-width: 600px) {
+  nav .nav-list ul .nav-item {
+    margin-bottom: 0;
+    margin-left: 2em;
+    color: white;
+  }
+}
+nav .nav-list ul .nav-item .line-through {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 0;
+  border-top: 0.3em solid #FFB344;
+  transition: width 0.5s ease-in;
+}
+nav .nav-list ul .nav-item:hover {
+  color: #FFB344;
+}
+nav .nav-list ul .nav-item:hover .line-through {
+  width: 150%;
+}
+@media screen and (min-width: 600px) {
+  nav .nav-list ul .nav-item:hover .line-through {
+    width: 100%;
+  }
+}
+nav .nav-list ul.open {
+  transform: scale(1);
+  opacity: 1;
+}
+nav .hamburger {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  nav .hamburger {
+    height: 50px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+}
+nav .hamburger .bar-top {
+  background-color: white;
+  width: 50%;
+  height: 4px;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+nav .hamburger .bar-top.open {
+  transform: translateY(5px) translateX(2px) rotate(45deg);
+  position: relative;
+}
+nav .hamburger .bar-mid {
+  background-color: white;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+nav .hamburger .bar-mid.open {
+  transform: rotate(-45deg);
+}
+nav .hamburger .bar-bottom-container {
+  width: 100%;
+  height: 4px;
+  display: flex;
+  justify-content: flex-end;
+}
+nav .hamburger .bar-bottom-container .bar-bottom {
+  background-color: white;
+  width: 50%;
+  height: 4px;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+}
+nav .hamburger .bar-bottom-container .bar-bottom.open {
+  transform: translateY(-6px) translateX(-2px) rotate(45deg);
 }
 
 p {
@@ -115,6 +237,7 @@ svg.intro.go .text-stroke:nth-child(6) {
 
 .globe-gif {
   pointer-events: none;
+  z-index: 11;
 }
 
 .bio-blueprint-background {
