@@ -1,5 +1,17 @@
+const btn = document.querySelector(".hamburger");
+const navOptions = document.querySelector(".nav-list ul");
+
+btn.addEventListener("click", () => {
+  btn.querySelectorAll("div").forEach((bar) => bar.classList.toggle("open"));
+  
+  navOptions.classList.toggle("open");
+});
 
 
+
+
+
+///////////////////
 $(function() {
     $('.intro').addClass('go');
   
