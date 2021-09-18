@@ -14,6 +14,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.resize-animation-stopper-utility * {
+  transition: none !important;
+  animation: none !important;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -49,7 +54,7 @@ nav .nav-list ul {
     flex-direction: column;
     height: 56vh;
     width: 150px;
-    background-color: #5672fc;
+    background-color: #374044;
     z-index: 10;
     transform: scale(0);
     opacity: 0;
@@ -62,12 +67,12 @@ nav .nav-list ul .nav-item {
   position: relative;
   font-family: "Gravitica Mono Light Demo";
   font-size: 1.2em;
+  color: white;
 }
 @media screen and (min-width: 600px) {
   nav .nav-list ul .nav-item {
     margin-bottom: 0;
     margin-left: 2em;
-    color: white;
   }
 }
 nav .nav-list ul .nav-item .line-through {
