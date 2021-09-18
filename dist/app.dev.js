@@ -1,5 +1,14 @@
 "use strict";
 
+var nav = document.querySelector("nav");
+var resizeTimer;
+window.addEventListener("resize", function () {
+  nav.classList.add("resize-animation-stopper-utility");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    nav.classList.remove("resize-animation-stopper-utility");
+  }, 400);
+});
 var btn = document.querySelector(".hamburger");
 var navOptions = document.querySelector(".nav-list ul");
 btn.addEventListener("click", function () {

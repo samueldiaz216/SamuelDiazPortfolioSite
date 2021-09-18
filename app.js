@@ -1,3 +1,13 @@
+const nav = document.querySelector("nav");
+let resizeTimer;
+window.addEventListener("resize", () => {
+  nav.classList.add("resize-animation-stopper-utility");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    nav.classList.remove("resize-animation-stopper-utility");
+  }, 400);
+});
+
 const btn = document.querySelector(".hamburger");
 const navOptions = document.querySelector(".nav-list ul");
 
