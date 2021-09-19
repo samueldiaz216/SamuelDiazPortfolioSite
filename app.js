@@ -1,6 +1,69 @@
+const globe = document.querySelector(".globe-gif");
+
+if(window.innerWidth>700){
+    globe.setAttribute("width", "450");
+    globe.setAttribute("height", "450");
+  }
+  if(window.innerWidth<700){
+    globe.setAttribute("width", "250");
+    globe.setAttribute("height", "250");
+  }
+  if(window.innerWidth<600){
+    globe.setAttribute("width", "220");
+    globe.setAttribute("height", "220");
+  }
+  if(window.innerWidth<550){
+    globe.setAttribute("width", "200");
+    globe.setAttribute("height", "200");
+  }
+  if(window.innerWidth<500){
+    globe.setAttribute("width", "180");
+    globe.setAttribute("height", "180");
+  }
+  if(window.innerWidth<450){
+    globe.setAttribute("width", "160");
+    globe.setAttribute("height", "160");
+  }
+  if(window.innerWidth<400){
+    globe.setAttribute("width", "130");
+    globe.setAttribute("height", "130");
+  }
+
+window.addEventListener("resize", () => {
+  if(window.innerWidth>700){
+    globe.setAttribute("width", "450");
+    globe.setAttribute("height", "450");
+  }
+  if(window.innerWidth<700){
+    globe.setAttribute("width", "250");
+    globe.setAttribute("height", "250");
+  }
+  if(window.innerWidth<600){
+    globe.setAttribute("width", "220");
+    globe.setAttribute("height", "220");
+  }
+  if(window.innerWidth<550){
+    globe.setAttribute("width", "200");
+    globe.setAttribute("height", "200");
+  }
+  if(window.innerWidth<500){
+    globe.setAttribute("width", "180");
+    globe.setAttribute("height", "180");
+  }
+  if(window.innerWidth<450){
+    globe.setAttribute("width", "160");
+    globe.setAttribute("height", "160");
+  }
+  if(window.innerWidth<400){
+    globe.setAttribute("width", "130");
+    globe.setAttribute("height", "130");
+  }
+});
+
 const nav = document.querySelector("nav");
 let resizeTimer;
 window.addEventListener("resize", () => {
+  
   nav.classList.add("resize-animation-stopper-utility");
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {

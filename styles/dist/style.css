@@ -191,10 +191,6 @@ header {
   position: relative;
 }
 
-svg.intro {
-  max-width: 800px;
-  width: 1000px;
-}
 svg.intro .text {
   display: none;
 }
@@ -238,6 +234,46 @@ svg.intro.go .text-stroke:nth-child(6) {
 #position-font-smaller {
   font-size: 0.35rem;
   font-family: "Akira Expanded Demo";
+}
+
+.svg-container {
+  position: relative;
+  width: 40%;
+}
+@media screen and (max-width: 1650px) {
+  .svg-container {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .svg-container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .svg-container {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .svg-container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .svg-container {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .svg-container {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .svg-container {
+    width: 85%;
+  }
 }
 
 .globe-gif {
