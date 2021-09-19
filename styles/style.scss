@@ -327,6 +327,8 @@ body {
   }
   @media screen and (max-width: 400px) {
     width:200%;
+    position:relative;
+    bottom:6em;
   }
 
   }
@@ -335,6 +337,9 @@ body {
   .globe-gif{
     pointer-events: none;
     z-index: 11;
+    @media screen and (max-width: 400px) {
+      display:none;
+    }
     
   }
 
