@@ -36,6 +36,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: flex-end;
+  opacity: 0;
 }
 nav .nav-list {
   position: relative;
@@ -275,10 +276,27 @@ svg.intro.go .text-stroke:nth-child(6) {
     width: 85%;
   }
 }
+@media screen and (max-width: 700px) {
+  .svg-container {
+    width: 150%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .svg-container {
+    width: 200%;
+    position: relative;
+    bottom: 6em;
+  }
+}
 
 .globe-gif {
   pointer-events: none;
   z-index: 11;
+}
+@media screen and (max-width: 400px) {
+  .globe-gif {
+    display: none;
+  }
 }
 
 .bio-blueprint-background {

@@ -1,5 +1,78 @@
 "use strict";
 
+var globe = document.querySelector(".globe-gif");
+
+if (window.innerWidth > 700) {
+  globe.setAttribute("width", "450");
+  globe.setAttribute("height", "450");
+}
+
+if (window.innerWidth < 700) {
+  globe.setAttribute("width", "250");
+  globe.setAttribute("height", "250");
+}
+
+if (window.innerWidth < 600) {
+  globe.setAttribute("width", "220");
+  globe.setAttribute("height", "220");
+}
+
+if (window.innerWidth < 550) {
+  globe.setAttribute("width", "200");
+  globe.setAttribute("height", "200");
+}
+
+if (window.innerWidth < 500) {
+  globe.setAttribute("width", "180");
+  globe.setAttribute("height", "180");
+}
+
+if (window.innerWidth < 450) {
+  globe.setAttribute("width", "160");
+  globe.setAttribute("height", "160");
+}
+
+if (window.innerWidth < 400) {
+  globe.setAttribute("width", "130");
+  globe.setAttribute("height", "130");
+}
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 700) {
+    globe.setAttribute("width", "450");
+    globe.setAttribute("height", "450");
+  }
+
+  if (window.innerWidth < 700) {
+    globe.setAttribute("width", "250");
+    globe.setAttribute("height", "250");
+  }
+
+  if (window.innerWidth < 600) {
+    globe.setAttribute("width", "220");
+    globe.setAttribute("height", "220");
+  }
+
+  if (window.innerWidth < 550) {
+    globe.setAttribute("width", "200");
+    globe.setAttribute("height", "200");
+  }
+
+  if (window.innerWidth < 500) {
+    globe.setAttribute("width", "180");
+    globe.setAttribute("height", "180");
+  }
+
+  if (window.innerWidth < 450) {
+    globe.setAttribute("width", "160");
+    globe.setAttribute("height", "160");
+  }
+
+  if (window.innerWidth < 400) {
+    globe.setAttribute("width", "130");
+    globe.setAttribute("height", "130");
+  }
+});
 var nav = document.querySelector("nav");
 var resizeTimer;
 window.addEventListener("resize", function () {
@@ -248,3 +321,11 @@ gsap.fromTo(".globe-gif", {
   opacity: 1,
   duration: 2
 });
+setTimeout(function () {
+  gsap.fromTo("nav", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 4
+  });
+}, 4000);

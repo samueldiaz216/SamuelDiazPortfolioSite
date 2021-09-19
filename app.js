@@ -367,3 +367,7 @@ $(function() {
   })
   gsap.fromTo(".globe-gif",{x:-500},{x:0, duration:4})
   gsap.fromTo(".globe-gif",{opacity:0},{opacity:1,duration:2})
+  setTimeout(()=>{
+    gsap.fromTo("nav",{opacity:0},{opacity:1,duration:4})
+  },4000)
+  
