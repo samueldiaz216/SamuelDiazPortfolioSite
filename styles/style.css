@@ -36,6 +36,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: flex-end;
+  opacity: 0;
 }
 nav .nav-list {
   position: relative;
