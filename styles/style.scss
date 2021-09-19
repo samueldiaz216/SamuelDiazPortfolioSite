@@ -239,10 +239,11 @@ body {
 
       
   }
+
+
   
   svg.intro {
-    max-width: 800px;
-    width:1000px;
+
     
     
 
@@ -297,10 +298,44 @@ body {
     
     
   }
+  .svg-container{
+	position: relative;
+	width: 40%;
+	@media screen and (max-width: 1650px) {
+    width:45%;
+  }
+  @media screen and (max-width: 1500px) {
+    width:50%;
+  }
+  @media screen and (max-width: 1400px) {
+    width:55%;
+  }
+  @media screen and (max-width: 1250px) {
+    width:60%;
+  }
+  @media screen and (max-width: 1100px) {
+    width:65%;
+  }
+  @media screen and (max-width: 950px) {
+    width:75%;
+  }
+  @media screen and (max-width: 850px) {
+    width:85%;
+  }
+  @media screen and (max-width: 700px) {
+    width:150%;
+  }
+  @media screen and (max-width: 400px) {
+    width:200%;
+  }
+
+  }
+
 
   .globe-gif{
     pointer-events: none;
     z-index: 11;
+    
   }
 
   .bio-blueprint-background{
