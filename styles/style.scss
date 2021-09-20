@@ -5,7 +5,8 @@ $text-font:'Gravitica Mono Light Demo';
 
 $background-color:#152D35;
 $primary-color:#FFB344;
-$secondary-color:white;
+$secondary-color:#FFF;
+$tertiary-color:#374044;
 
 $heading-font-size:.35rem;
 $text-font-size:1rem;
@@ -50,6 +51,22 @@ body {
     color: inherit;
   }
 
+  textarea, input { 
+    outline: none; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
 
  
 
@@ -79,7 +96,7 @@ body {
           flex-direction: column;
           height: 56vh;
           width:150px;
-          background-color: #374044;
+          background-color: $tertiary-color;
           z-index: 10;
           transform: scale(0);
           opacity: 0;
@@ -240,6 +257,148 @@ body {
 
       
   }
+
+  
+
+
+
+
+  .contact{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+
+    &-form{
+      background-color: $background-color;
+      width:50%;
+      text-align: center;
+      position: fixed;
+      /* Centering */
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%)scale(0);
+      transition: 200ms ease-in-out;
+      z-index:2000;
+      padding:20px;
+      border: $secondary-color 3px solid;
+      display: flex;
+      flex-direction: column;
+
+      &.active{
+        transform: translate(-50%,-50%)scale(1);
+      }
+
+      .confirmation-check{
+        position: absolute;
+        width:40%;
+        z-index: 3000;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%)scale(0);
+        transition: 200ms ease-in-out;
+        &.active{
+          transform: translate(-50%,-50%)scale(1);
+        }
+      }
+
+      form{
+        display: flex;
+        flex-direction: column;
+
+        .form-item{
+          margin-bottom: 1em;
+          border:$secondary-color 3px dashed; 
+          background-color: $background-color;
+          border-top:none ;
+          border-right:none ;
+          border-left:none ;
+          color: $secondary-color;
+        }
+
+        .contact-form-footer{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          button{
+            font-family: $text-font;
+            font-size: $text-font-size;
+            color: $secondary-color;
+            border: solid $secondary-color 3px;
+            width:60px;
+            text-align: center;
+            &:hover{
+              border: solid $primary-color 3px;
+              color: $primary-color;
+            }
+          }
+  
+          .contact-error-message{
+            font-family: $text-font;
+            font-size: 14px;
+            color: $secondary-color;
+          }
+        }
+        
+      }
+      
+    }
+
+    .contact-form-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1{
+        color:$secondary-color;
+        font-family: $heading-font;
+      }
+
+      .close-button{
+        opacity:0.6;
+        cursor: pointer;
+        
+        
+        img{
+          width:1.5em;
+        }
+        
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+    }    
+    
+
+    .overlay{
+      position: fixed;
+      top:0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, .5);
+      opacity:0;
+      transition: 200ms ease-in-out;
+      /* Click events can't be captured
+      when overlay not active. You need this
+      to click buttons when overlay not active*/
+      pointer-events: none;
+      z-index: 1999;
+  
+    }
+  
+    .overlay.active{
+      opacity: 1;
+      /* Click events can be captured
+      when overlay active. You need this shit 
+      to click buttons when overlay not active* */
+      pointer-events: all;
+    }
+
+}
+  
 
 
   

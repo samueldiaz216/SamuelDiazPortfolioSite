@@ -21,8 +21,31 @@
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
+        <section class="contact">
 
+          <div class="contact-form">
+            <img class="confirmation-check" src="check (1).png" />
+            <div class="contact-form-header">
+              <h1>Contact</h1>
+              <button class="close-button"><img src="close.png"/></button>
+            </div>
+            
+            
+            <form class="contact-form-info" action="https://formsubmit.co/samueldiaz216@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input class="form-item contact-name" type="text" name="name" placeholder="Name" required>
+              <input class="form-item contact-email" type="email" name="email" placeholder="Email Address" required>
+              <textarea class="form-item contact-message" name="Text1" cols="40" rows="5" placeholder="Message" required></textarea>
+              <div class="contact-form-footer">
+                <button class="send-button" type="button">Send</button>
+                <label class="contact-error-message"></label>
+              </div>
+            </form> 
 
+          </div>
+
+          <div class="overlay"></div>
+        </section> 
         <nav>
         
           <ul class="nav-list">
@@ -35,7 +58,7 @@
             <ul>
               <li class="nav-item"><a href="#projects"><span class="line-through"></span>Projects</a></li>
               <li class="nav-item"><a href="./resume.pdf" target="_blank"><span class="line-through"></span>Resume</a></li>
-              <li class="nav-item"><a href="#projects"><span class="line-through"></span>Contact</a></li>
+              <li class="nav-item"><button class="contact-button"><span class="line-through"></span>Contact</button></li>
             </ul>
             
             
@@ -217,7 +240,7 @@
             </div>
           </div></a>
           
-          <a href="./index.html"><div class="projects-container">
+          <a href="https://samueldiazdev.netlify.app/"><div class="projects-container">
             <div class="projects-project dashed-border portfolio">
               <h2>Portfolio Site</h2>
               <img src="portfolioMobileView.png"/>
