@@ -328,4 +328,66 @@ setTimeout(function () {
     opacity: 1,
     duration: 4
   });
-}, 4000);
+}, 2000); //Make contact modal pop up on button press
+
+var contactButton = document.querySelector(".contact-button");
+var overlay = document.querySelector(".overlay");
+var contactForm = document.querySelector(".contact-form");
+var closeButton = document.querySelector(".close-button");
+var sendButton = document.querySelector(".send-button");
+var contactFormInfo = document.querySelector(".contact-form-info");
+contactButton.addEventListener("click", function () {
+  overlay.classList.toggle("active");
+  contactForm.classList.toggle("active");
+});
+closeButton.addEventListener("click", function () {
+  overlay.classList.toggle("active");
+  contactForm.classList.toggle("active");
+});
+var contactName = document.querySelector(".contact-name");
+var contactEmail = document.querySelector(".contact-email");
+var contactMessage = document.querySelector(".contact-message");
+var confirmationCheck = document.querySelector(".confirmation-check");
+var contactErrorMessage = document.querySelector(".contact-error-message");
+contactErrorMessage.innerHTML = "";
+sendButton.addEventListener("click", function () {
+  contactErrorMessage.innerHTML = "";
+
+  if (contactName.value.search(/[^\s]+/) == -1 || contactEmail.value.search(/[^\s]+@[^\s]/) == -1 || contactMessage.value.search(/.+/) == -1) {
+    if (contactName.value.search(/[^\s]+/) == -1) {
+      contactErrorMessage.innerHTML = contactErrorMessage.innerHTML + "Enter your name. ";
+    }
+
+    if (contactEmail.value.search(/[^\s]+@[^\s]/)) {
+      contactErrorMessage.innerHTML = contactErrorMessage.innerHTML + "Enter a valid email. ";
+    }
+
+    if (contactMessage.value.search(/.+/)) {
+      contactErrorMessage.innerHTML = contactErrorMessage.innerHTML + "Enter a message. ";
+    }
+
+    gsap.fromTo(contactErrorMessage, {
+      opacity: 0
+    }, {
+      opacity: 1,
+      duration: 1
+    });
+    gsap.fromTo(contactErrorMessage, {
+      opacity: 1
+    }, {
+      opacity: 0,
+      duration: 1,
+      delay: 1
+    });
+  } else {
+    confirmationCheck.classList.toggle("active"); // setTimeout(()=>{
+    //   gsap.to(".contact-form", {x:3000, duration:1});
+    // },300)
+
+    setTimeout(function () {
+      overlay.classList.toggle("active");
+      contactForm.classList.toggle("active");
+      confirmationCheck.classList.toggle("active");
+    }, 600); // contactFormInfo.submit();
+  }
+});
