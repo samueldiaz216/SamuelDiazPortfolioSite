@@ -1,3 +1,5 @@
+
+
 const globe = document.querySelector(".globe-gif");
 
 if(window.innerWidth>700){
@@ -398,9 +400,16 @@ $(function() {
   });
 
 
-  let contactName=document.querySelector(".contact-name");
-  let contactEmail=document.querySelector(".contact-email");
-  let contactMessage=document.querySelector(".contact-message");
+  let contactName=document.getElementById("name");
+  let contactEmail=document.getElementById("email");
+  let contactMessage=document.getElementById("message");
+
+  var contactParams={
+    from_email: contactEmail.value,
+    from_name: contactName.value,
+    message: contactMessage.value
+  };
+
   let confirmationCheck=document.querySelector(".confirmation-check");
   let contactErrorMessage=document.querySelector(".contact-error-message");
   contactErrorMessage.innerHTML="";
@@ -419,7 +428,7 @@ $(function() {
         contactErrorMessage.innerHTML=contactErrorMessage.innerHTML+"Enter a message. ";
       }
       gsap.fromTo(contactErrorMessage,{opacity:0},{opacity:1, duration:1});
-      gsap.fromTo(contactErrorMessage,{opacity:1},{opacity:0, duration:1, delay:1});
+      gsap.to(contactErrorMessage,{opacity:0, duration:1, delay:1});
 
       
     }else{
@@ -431,10 +440,12 @@ $(function() {
         overlay.classList.toggle("active");
         contactForm.classList.toggle("active");
         confirmationCheck.classList.toggle("active");
+        contactFormInfo.reset();
       },600)
       
       
-      // contactFormInfo.submit();
+      emailjs.send('service_zhp0rd1','template_4q1723e',contactParams,).then(function(res){});
+    
     }
     
   });

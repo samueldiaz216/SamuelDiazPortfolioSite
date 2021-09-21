@@ -344,9 +344,14 @@ closeButton.addEventListener("click", function () {
   overlay.classList.toggle("active");
   contactForm.classList.toggle("active");
 });
-var contactName = document.querySelector(".contact-name");
-var contactEmail = document.querySelector(".contact-email");
-var contactMessage = document.querySelector(".contact-message");
+var contactName = document.getElementById("name");
+var contactEmail = document.getElementById("email");
+var contactMessage = document.getElementById("message");
+var contactParams = {
+  from_email: contactEmail.value,
+  from_name: contactName.value,
+  message: contactMessage.value
+};
 var confirmationCheck = document.querySelector(".confirmation-check");
 var contactErrorMessage = document.querySelector(".contact-error-message");
 contactErrorMessage.innerHTML = "";
@@ -372,9 +377,7 @@ sendButton.addEventListener("click", function () {
       opacity: 1,
       duration: 1
     });
-    gsap.fromTo(contactErrorMessage, {
-      opacity: 1
-    }, {
+    gsap.to(contactErrorMessage, {
       opacity: 0,
       duration: 1,
       delay: 1
@@ -388,6 +391,8 @@ sendButton.addEventListener("click", function () {
       overlay.classList.toggle("active");
       contactForm.classList.toggle("active");
       confirmationCheck.classList.toggle("active");
-    }, 600); // contactFormInfo.submit();
+      contactFormInfo.reset();
+    }, 600);
+    emailjs.send('service_zhp0rd1', 'template_4q1723e', contactParams).then(function (res) {});
   }
 });
