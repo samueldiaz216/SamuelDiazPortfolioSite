@@ -19,6 +19,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/style.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+          (function() {
+            emailjs.init("user_PUFBvenwP7J6bf1RO07DH");
+          })();
+        </script>
     </head>
     <body>
         <section class="contact">
@@ -33,9 +39,9 @@
             
             <form class="contact-form-info" action="https://formsubmit.co/samueldiaz216@gmail.com" method="POST">
               <input type="hidden" name="_captcha" value="false">
-              <input class="form-item contact-name" type="text" name="name" placeholder="Name" required>
-              <input class="form-item contact-email" type="email" name="email" placeholder="Email Address" required>
-              <textarea class="form-item contact-message" name="Text1" cols="40" rows="5" placeholder="Message" required></textarea>
+              <input class="form-item contact-name" type="text" id="name" name="name" placeholder="Name" required>
+              <input class="form-item contact-email" type="email" id="email" name="email" placeholder="Email Address" required>
+              <textarea class="form-item contact-message" id="message" name="message" cols="40" rows="5" placeholder="Message" required></textarea>
               <div class="contact-form-footer">
                 <button class="send-button" type="button">Send</button>
                 <label class="contact-error-message"></label>
