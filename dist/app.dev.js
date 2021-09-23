@@ -344,12 +344,18 @@ closeButton.addEventListener("click", function () {
   overlay.classList.toggle("active");
   contactForm.classList.toggle("active");
 });
+
+(function () {
+  emailjs.init("user_PUFBvenwP7J6bf1RO07DH");
+})();
+
 var contactName = document.getElementById("name");
 var contactEmail = document.getElementById("email");
 var contactMessage = document.getElementById("message");
 var contactParams = {
   from_email: contactEmail.value,
   from_name: contactName.value,
+  to_name: 'Samuel',
   message: contactMessage.value
 };
 var confirmationCheck = document.querySelector(".confirmation-check");
@@ -383,6 +389,12 @@ sendButton.addEventListener("click", function () {
       delay: 1
     });
   } else {
+    var contactParams = {
+      from_email: contactEmail.value,
+      from_name: contactName.value,
+      to_name: 'Samuel',
+      message: contactMessage.value
+    };
     confirmationCheck.classList.toggle("active"); // setTimeout(()=>{
     //   gsap.to(".contact-form", {x:3000, duration:1});
     // },300)

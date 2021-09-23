@@ -399,6 +399,10 @@ $(function() {
     contactForm.classList.toggle("active");
   });
 
+  (function() {
+    emailjs.init("user_PUFBvenwP7J6bf1RO07DH");
+  })();
+
 
   let contactName=document.getElementById("name");
   let contactEmail=document.getElementById("email");
@@ -407,6 +411,7 @@ $(function() {
   var contactParams={
     from_email: contactEmail.value,
     from_name: contactName.value,
+    to_name:'Samuel',
     message: contactMessage.value
   };
 
@@ -432,6 +437,14 @@ $(function() {
 
       
     }else{
+
+      var contactParams={
+        from_email: contactEmail.value,
+        from_name: contactName.value,
+        to_name:'Samuel',
+        message: contactMessage.value
+      };
+
       confirmationCheck.classList.toggle("active");
       // setTimeout(()=>{
       //   gsap.to(".contact-form", {x:3000, duration:1});
@@ -442,9 +455,9 @@ $(function() {
         confirmationCheck.classList.toggle("active");
         contactFormInfo.reset();
       },600)
+
       
-      
-      emailjs.send('service_zhp0rd1','template_4q1723e',contactParams,).then(function(res){});
+      emailjs.send('service_zhp0rd1','template_4q1723e',contactParams).then(function(res){});
     
     }
     
