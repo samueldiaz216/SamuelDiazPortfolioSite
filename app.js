@@ -432,8 +432,8 @@ $(function() {
       if(contactMessage.value.search(/.+/)){
         contactErrorMessage.innerHTML=contactErrorMessage.innerHTML+"Enter a message. ";
       }
-      gsap.fromTo(contactErrorMessage,{opacity:0},{opacity:1, duration:1});
-      gsap.to(contactErrorMessage,{opacity:0, duration:1, delay:1});
+      let errorMessageTween=gsap.fromTo(contactErrorMessage,{opacity:0},{opacity:1, duration:1, paused:true, yoyo:true, repeat:1});
+      errorMessageTween.play();
 
       
     }else{
@@ -446,9 +446,8 @@ $(function() {
       };
 
       confirmationCheck.classList.toggle("active");
-      // setTimeout(()=>{
-      //   gsap.to(".contact-form", {x:3000, duration:1});
-      // },300)
+      
+      
       setTimeout(()=>{
         overlay.classList.toggle("active");
         contactForm.classList.toggle("active");
