@@ -377,17 +377,16 @@ sendButton.addEventListener("click", function () {
       contactErrorMessage.innerHTML = contactErrorMessage.innerHTML + "Enter a message. ";
     }
 
-    gsap.fromTo(contactErrorMessage, {
+    var errorMessageTween = gsap.fromTo(contactErrorMessage, {
       opacity: 0
     }, {
       opacity: 1,
-      duration: 1
-    });
-    gsap.to(contactErrorMessage, {
-      opacity: 0,
       duration: 1,
-      delay: 1
+      paused: true,
+      yoyo: true,
+      repeat: 1
     });
+    errorMessageTween.play();
   } else {
     var contactParams = {
       from_email: contactEmail.value,
@@ -395,10 +394,7 @@ sendButton.addEventListener("click", function () {
       to_name: 'Samuel',
       message: contactMessage.value
     };
-    confirmationCheck.classList.toggle("active"); // setTimeout(()=>{
-    //   gsap.to(".contact-form", {x:3000, duration:1});
-    // },300)
-
+    confirmationCheck.classList.toggle("active");
     setTimeout(function () {
       overlay.classList.toggle("active");
       contactForm.classList.toggle("active");
